@@ -1,0 +1,25 @@
+﻿.divided {
+    flex-direction: row !important;
+}
+
+.divided .left {
+    flex-direction: column;
+
+}
+
+.divided .right {
+        border-left: 1px solid #223843;
+        flex-direction: column;
+}
+
+ul {
+    list-style-type: none;
+    font-size: 10px;
+    padding-left: 25px;
+}
+
+table, th, td {
+    padding: 2px;
+    width: 90%;
+    border: 1px solid black;
+}
