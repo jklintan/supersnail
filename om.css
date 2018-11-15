@@ -1,5 +1,5 @@
 ﻿.divided {
-    flex-direction: row !important;
+    flex-direction: row;
 }
 
 .divided .left {
@@ -25,4 +25,24 @@ table, th, td {
 
 th {
     text-align: left !important;
+}
+
+@media only screen and (max-width: 600px) {
+    .divided {
+        flex-direction: column;
+    }
+
+    .divided table {
+        display: flex;
+        flex-direction: column;
+        overflow: scroll;
+    }
+
+    .divided div.right {
+        border-left: 0;
+    }
+
+    footer p {
+        font-size: 8px;
+    }
 }

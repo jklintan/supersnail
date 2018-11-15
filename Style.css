@@ -36,6 +36,17 @@ header {
     margin: 0;
 }
 
+header a:first-of-type {
+    display: none;
+}
+
+header a i.fas {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0) !important;
+    border: none;
+}
+
 header * {
     text-decoration: none;
     display: flex;
@@ -133,9 +144,48 @@ h4 {
     padding: 20px;
 }
 
+#time {
+    position: absolute;
+    color: #fff;
+    margin: 0;
+    right: 15px;
+    padding: 0;
+}
+
+#time p {
+    justify-content: center;
+    width: 8px;
+}
+
+#time p:nth-of-type(odd) {
+    padding: 0;
+}
+
+/*Media queries*/
 
 @media only screen and (max-width: 600px) {
+    header a:first-of-type {
+        display: flex;
+        justify-content: flex-start;
+    }
+
     header {
+        flex-wrap: wrap;
+        overflow: hidden;
         flex-direction: column;
+        transition: 200ms;
+        justify-content: flex-start;
+    }
+
+    header a {
+        border-bottom: 0 !important;
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        padding: 0;
+    }
+
+    h1 {
+        font-size: 20px;
     }
 }
