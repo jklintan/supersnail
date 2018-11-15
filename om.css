@@ -20,6 +20,9 @@ ul {
 
 table, th, td {
     padding: 2px;
-    width: 90%;
-    border: 1px solid black;
+    font-size: 13px;
+}
+
+th {
+    text-align: left !important;
 }
