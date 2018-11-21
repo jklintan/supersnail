@@ -49,7 +49,7 @@ const pad = (num) => {
 
 const append = (num) => {
     const element = document.querySelector('#time')
-    digitElement = document.createElement('p')
+    const digitElement = document.createElement('p')
     digitElement.textContent = num
     element.appendChild(digitElement)
 }
