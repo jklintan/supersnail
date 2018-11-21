@@ -5,6 +5,19 @@ const init = () => {
     updateClock()
 }
 
+const toggleTheme = () => {
+    const elements = document.querySelectorAll('body, header')
+    elements.forEach(element => {
+        const style = window.getComputedStyle(element).backgroundColor
+        console.log(style)
+        if (style === 'rgb(34, 56, 67)') {
+            element.style.backgroundColor = '#eae0cc'
+        } else {
+            element.style.backgroundColor = 'rgb(34, 56, 67)'
+        }
+    })
+}
+
 const toggleHeader = () => {
     const element = document.querySelector('#toggle')
     const header = document.querySelector('header')
