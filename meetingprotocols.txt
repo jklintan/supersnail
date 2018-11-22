@@ -1,65 +1,66 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <div id="meetingpost">
     <h1>
-        Mötesprotokoll
+        Mï¿½tesprotokoll
     </h1>
 
     <h3>
-        Mötesprotokoll V45 - uppstartsmöte och projektmöte
+        Mï¿½tesprotokoll V45 - uppstartsmï¿½te och projektmï¿½te
     </h3>
 
     <p>
-        Uppstartsmöte:
-        Projektidén fastställdes och de olika ansvarsområdena blev fördelade. Vi började hitta på manusideér och gemensamt bestämma vilken grafisk stil vi vill ha på filmen.
+        Uppstartsmï¿½te:
+        Projektidï¿½n faststï¿½lldes och de olika ansvarsomrï¿½dena blev fï¿½rdelade. Vi bï¿½rjade hitta pï¿½ manusideï¿½r och gemensamt bestï¿½mma vilken grafisk stil vi vill ha pï¿½ filmen.
 
-        Projektgruppsmöte:
+        Projektgruppsmï¿½te:
         Dagordning:
-        Dokument som ska lämnas in närmsta tiden
+        Dokument som ska lï¿½mnas in nï¿½rmsta tiden
         Projektplanen
-        Handledningsmöte
-        Vårt syfte
+        Handledningsmï¿½te
+        Vï¿½rt syfte
         Tidsplan och starta
 
-        Vi hade ett första möte med handledare. Vi gick igenom vilka program vi ska använda, vilket format och andra detaljer som behövdes fastställas för att vi skulle komma igång med produktionen av filmen.
+        Vi hade ett fï¿½rsta mï¿½te med handledare. Vi gick igenom vilka program vi ska anvï¿½nda, vilket format och andra detaljer som behï¿½vdes faststï¿½llas fï¿½r att vi skulle komma igï¿½ng med produktionen av filmen.
 
-        En mall för tidsplanen fastställdes samt ett enkelt manus att utgå från. Animationstil och mjukvara fastställdes. Till nästa möte fick alla uppgiften att testa blender samt skriva på projektplanen. En första skiss på tidsplan gjordes och de våra största deadlines skrevs upp i en lista för en översikt.
+        En mall fï¿½r tidsplanen faststï¿½lldes samt ett enkelt manus att utgï¿½ frï¿½n. Animationstil och mjukvara faststï¿½lldes. Till nï¿½sta mï¿½te fick alla uppgiften att testa blender samt skriva pï¿½ projektplanen. En fï¿½rsta skiss pï¿½ tidsplan gjordes och de vï¿½ra stï¿½rsta deadlines skrevs upp i en lista fï¿½r en ï¿½versikt.
 
-        Mål och animeringsidéer:
-        Slutprodukt: En animerad film som ska vara 30 s - 1 min lång
+        Mï¿½l och animeringsidï¿½er:
+        Slutprodukt: En animerad film som ska vara 30 s - 1 min lï¿½ng
 
         Film plot:
         The adventure of a snail (NAME TO BE DECIDED)
 
-        Huvudkaraktär: snigel
+        Huvudkaraktï¿½r: snigel
 
-        Rör sig genom miljöer, saker händer men snigeln klarar sig
-        På slutet gör snigeln något enkelt men dör då
+        Rï¿½r sig genom miljï¿½er, saker hï¿½nder men snigeln klarar sig
+        Pï¿½ slutet gï¿½r snigeln nï¿½got enkelt men dï¿½r dï¿½
 
-        Snigel tittar runt hörn, kommer ut i första scenen
-        Glider nedför trappa
+        Snigel tittar runt hï¿½rn, kommer ut i fï¿½rsta scenen
+        Glider nedfï¿½r trappa
 
-        Snigel är liten först men blir större och större
+        Snigel ï¿½r liten fï¿½rst men blir stï¿½rre och stï¿½rre
 
-        Snigel kommer in från sidan, går framåt jättelångsamt med någon typ av effekt
-        Äter något/dricker kaffe och blir supersnabb
+        Snigel kommer in frï¿½n sidan, gï¿½r framï¿½t jï¿½ttelï¿½ngsamt med nï¿½gon typ av effekt
+        ï¿½ter nï¿½got/dricker kaffe och blir supersnabb
 
 
         Software:
         Blender, After Effects
 
-        En första enkel översikt:
-        v. 45 Spika vad vi behöver, vad som ska göras
+        En fï¿½rsta enkel ï¿½versikt:
+        v. 45 Spika vad vi behï¿½ver, vad som ska gï¿½ras
         v. 46-47 Modellering fixad
         v. 47 Riggning & Texturering
         v. 48 Animering
-        v. 49 Söndagen ska vi vara klara med filmen, Fixa klart animering
+        v. 49 Sï¿½ndagen ska vi vara klara med filmen, Fixa klart animering
         v. 50 Seminarie och rapportdeadline
 
-        Vår deadline film: Söndagen 9 december
+        Vï¿½r deadline film: Sï¿½ndagen 9 december
         DEADLINE: 13 december seminarie, rapport onsdag 12 december
 
-        Tills nästa gång:
-        Alla börjar skriva på tilldelade rubriker i projektplanen. Nästa möte ska alla vara bekanta med Blender och vi sammanställer inlämning 1.
+        Tills nï¿½sta gï¿½ng:
+        Alla bï¿½rjar skriva pï¿½ tilldelade rubriker i projektplanen. Nï¿½sta mï¿½te ska alla vara bekanta med Blender och vi sammanstï¿½ller inlï¿½mning 1.
 
     </p>
 </div>
+2018/11/22<h3>hejsan allihopa</h3>blabla

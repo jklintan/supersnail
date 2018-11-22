@@ -1,15 +1,28 @@
-﻿
-<?php 
-$txt = "data.txt";
-if($_POST["password"]!=supersnail)
-    print("<p>Felaktigt lösenord!</p>");
-else{
-    if(isset($_POST['Heading'] && isset($_POST['Protocol'])){
+﻿<?php 
+    $txt = "protocols.txt";
+    if($_POST["password"]!= "123") // test if the password is correct
+        print("<p>Felaktigt lösenord!</p>");
+    else{
+        $timestamp = date("Y/m/d");
+        $headern = $_POST['Heading'];
+        $post = $_POST['Protocol'];
         $fh = fopen($txt, 'ab');
-        fwrite(date("Y-m-d H:i:s");
-        $txt = $_POST['Heading'].' - '.$_POST['Protocol'];
-        fwrite($fh, $txt);
+
+        // Write the protocol to the file
+        fwrite($fh, '<div class="timeforpost">');
+        fwrite($fh, $timestamp);
+        fwrite($fh, '</div>');
+        fwrite($fh, '<h3>');
+        fwrite($fh, $headern);
+        fwrite($fh, '</h3>');
+        fwrite($fh, '<p>');
+        fwrite($fh, $post);
+        fwrite($fh, '</p>');
         fclose($fh);
+        header('Location: projektdagbok.php');
     }
-}
 ?>
+
+<!-- <script type="text/javascript">
+    window.location.href = 'projektdagbok.php';
+</script> -->

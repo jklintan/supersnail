@@ -40,7 +40,7 @@ button:hover {
     align-items: center;
     position: absolute;
     top: 0;
-    //transform: translateY(-100vh);
+    transform: translateY(-100vh);
     transition: 500ms;
 }
 
@@ -52,6 +52,7 @@ button:hover {
     border-radius: 5px;
     width: 60vw;
     max-width: 960px;
+    /* max-height: 70vh; */
 }
 
 form {
