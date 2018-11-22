@@ -1,0 +1,65 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<div id="meetingpost">
+    <h1>
+        Mötesprotokoll
+    </h1>
+
+    <h3>
+        Mötesprotokoll V45 - uppstartsmöte och projektmöte
+    </h3>
+
+    <p>
+        Uppstartsmöte:
+        Projektidén fastställdes och de olika ansvarsområdena blev fördelade. Vi började hitta på manusideér och gemensamt bestämma vilken grafisk stil vi vill ha på filmen.
+
+        Projektgruppsmöte:
+        Dagordning:
+        Dokument som ska lämnas in närmsta tiden
+        Projektplanen
+        Handledningsmöte
+        Vårt syfte
+        Tidsplan och starta
+
+        Vi hade ett första möte med handledare. Vi gick igenom vilka program vi ska använda, vilket format och andra detaljer som behövdes fastställas för att vi skulle komma igång med produktionen av filmen.
+
+        En mall för tidsplanen fastställdes samt ett enkelt manus att utgå från. Animationstil och mjukvara fastställdes. Till nästa möte fick alla uppgiften att testa blender samt skriva på projektplanen. En första skiss på tidsplan gjordes och de våra största deadlines skrevs upp i en lista för en översikt.
+
+        Mål och animeringsidéer:
+        Slutprodukt: En animerad film som ska vara 30 s - 1 min lång
+
+        Film plot:
+        The adventure of a snail (NAME TO BE DECIDED)
+
+        Huvudkaraktär: snigel
+
+        Rör sig genom miljöer, saker händer men snigeln klarar sig
+        På slutet gör snigeln något enkelt men dör då
+
+        Snigel tittar runt hörn, kommer ut i första scenen
+        Glider nedför trappa
+
+        Snigel är liten först men blir större och större
+
+        Snigel kommer in från sidan, går framåt jättelångsamt med någon typ av effekt
+        Äter något/dricker kaffe och blir supersnabb
+
+
+        Software:
+        Blender, After Effects
+
+        En första enkel översikt:
+        v. 45 Spika vad vi behöver, vad som ska göras
+        v. 46-47 Modellering fixad
+        v. 47 Riggning & Texturering
+        v. 48 Animering
+        v. 49 Söndagen ska vi vara klara med filmen, Fixa klart animering
+        v. 50 Seminarie och rapportdeadline
+
+        Vår deadline film: Söndagen 9 december
+        DEADLINE: 13 december seminarie, rapport onsdag 12 december
+
+        Tills nästa gång:
+        Alla börjar skriva på tilldelade rubriker i projektplanen. Nästa möte ska alla vara bekanta med Blender och vi sammanställer inlämning 1.
+
+    </p>
+</div>

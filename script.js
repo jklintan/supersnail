@@ -53,3 +53,10 @@ const append = (num) => {
     digitElement.textContent = num
     element.appendChild(digitElement)
 }
+
+const newPost = (state) => {
+    const element = document.querySelector('.overlay')
+    if (state) {
+        element.style.transform = 'translateY(0)'
+    }
+}
