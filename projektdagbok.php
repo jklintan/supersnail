@@ -7,6 +7,8 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 	<script src="script.js"></script>
     <title>The Super Snail</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 </head>
 <body onload="init()">
     <header>
@@ -23,16 +25,19 @@
     <div class="content">
         <div class="container">
 			<button onclick="document.querySelector('.overlay').style.transform = 'translateY(0)'">Nytt mötesprotokoll</button> 
-             <?php include("protocols.txt");?>
+            <?php include("protocols.txt");?>
         </div>
 	</div>
 	<div class="overlay" >
 		<div>
-        <i class="fas fa-bars"></i>
-			<h2>Nytt inlägg</h2>
-			<form action="sendform.php" method="POST">
+            <div class="row">
+                <h2>Nytt inlägg</h2>
+                <i class="fas fa-times" onclick="closeOverlay()"></i>
+            </div>
+			<!-- <form action="sendform.php" method="POST"> -->
+            <form action="">
 				<p>Titel</p>
-				<input value="en riktigt bra titel" name="Heading" type="text" />
+				<input value="En riktigt bra titel" name="Heading" type="text" />
 				<p>Anteckningar</p>
 				<textarea value="123" name="Protocol" type="text"></textarea>
 				<div class="row">
@@ -47,3 +52,28 @@
     </footer>
 </body>
 </html>
+<?php
+    $txt = "protocols.txt";
+    if ($_POST["password"]!= "123") { // test if the password is correct
+        print("<p>Felaktigt lösenord!</p>");
+    } else {
+        $timestamp = date("Y/m/d");
+        $headern = $_POST['Heading'];
+        $post = $_POST['Protocol'];
+        $fh = fopen($txt, 'ab');
+
+        // Write the protocol to the file
+        fwrite($fh, '<div class="post">');
+        fwrite($fh, '<h3>');
+        fwrite($fh, $headern);
+        fwrite($fh, '</h3>');
+        fwrite($fh, '<p>');
+        fwrite($fh, $post);
+        fwrite($fh, '</p>');
+        fwrite($fh, '<p>');
+        fwrite($fh, $timestamp);
+        fwrite($fh, '</p>');
+        fwrite($fh, '</div>');
+        fclose($fh);
+    }
+?>
