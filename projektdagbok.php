@@ -1,4 +1,31 @@
-﻿<!DOCTYPE html>
+﻿<?php
+    if(isset($_POST['submit'])) {
+        $txt = "protocols.txt";
+            if ($_POST["password"]!= "123") { // test if the password is correct
+                print("<p>Felaktigt lösenord!</p>");
+            } else {
+                $timestamp = date("Y/m/d");
+                $headern = $_POST['Heading'];
+                $post = $_POST['Protocol'];
+                $fh = fopen($txt, 'ab');
+
+                // Write the protocol to the file
+                fwrite($fh, '<div class="post">');
+                fwrite($fh, '<h3>');
+                fwrite($fh, $headern);
+                fwrite($fh, '</h3>');
+                fwrite($fh, '<p>');
+                fwrite($fh, $post);
+                fwrite($fh, '</p>');
+                fwrite($fh, '<p>');
+                fwrite($fh, $timestamp);
+                fwrite($fh, '</p>');
+                fwrite($fh, '</div>');
+                fclose($fh);
+            }
+    }
+?>
+<!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -34,8 +61,8 @@
                 <h2>Nytt inlägg</h2>
                 <i class="fas fa-times" onclick="closeOverlay()"></i>
             </div>
-			<!-- <form action="sendform.php" method="POST"> -->
-            <form action="">
+			<form action="projektdagbok.php" method="POST">
+            <form>
 				<p>Titel</p>
 				<input value="En riktigt bra titel" name="Heading" type="text" />
 				<p>Anteckningar</p>
@@ -52,28 +79,3 @@
     </footer>
 </body>
 </html>
-<?php
-    $txt = "protocols.txt";
-    if ($_POST["password"]!= "123") { // test if the password is correct
-        print("<p>Felaktigt lösenord!</p>");
-    } else {
-        $timestamp = date("Y/m/d");
-        $headern = $_POST['Heading'];
-        $post = $_POST['Protocol'];
-        $fh = fopen($txt, 'ab');
-
-        // Write the protocol to the file
-        fwrite($fh, '<div class="post">');
-        fwrite($fh, '<h3>');
-        fwrite($fh, $headern);
-        fwrite($fh, '</h3>');
-        fwrite($fh, '<p>');
-        fwrite($fh, $post);
-        fwrite($fh, '</p>');
-        fwrite($fh, '<p>');
-        fwrite($fh, $timestamp);
-        fwrite($fh, '</p>');
-        fwrite($fh, '</div>');
-        fclose($fh);
-    }
-?>
