@@ -62,3 +62,7 @@ const newPost = (state) => {
         // element.style.transform = 'translateY(-100vh)'
     }
 }
+
+const closeOverlay = () => {
+    document.querySelector('.overlay').style.transform = 'translateY(-100vh)'
+}

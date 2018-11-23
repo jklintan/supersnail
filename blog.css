@@ -71,6 +71,7 @@ form textarea {
 }
 
 .overlay div .row {
+    position: relative;
     display: flex;
     flex-direction: row;
     padding: 0;
@@ -80,4 +81,22 @@ form textarea {
 
 .overlay div .row button {
    margin: 0 0 0 auto;
+}
+
+
+.overlay .row i {
+    position: absolute;
+    right: 0;
+}
+
+.post {
+    flex-direction: column;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 30px;
+}
+
+.post * {
+    padding: 0;
 }
