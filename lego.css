@@ -1,0 +1,32 @@
+.content .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+table {
+    /* display: flex; */
+    flex-grow: 0;
+    /* background-color: red !important; */
+
+}
+
+table tr {
+    display: flex;
+    /* justify-content: space-around; */
+}
+
+table tr td {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+table tr td:first-of-type {
+    width: 30px;
+}
+
+img {
+    mix-blend-mode: multiply;
+}

@@ -4,9 +4,9 @@
         if(!$connection){
             die('MySQL connection error');
         }
-        $author	=	mysqli_real_escape_string($connection,	$_POST["author"]);								
-        $heading	=	mysqli_real_escape_string($connection,	$_POST["heading"]);							
-        $text	=	mysqli_real_escape_string($connection,	$_POST["text"]);					
+        $author	=	mysqli_real_escape_string($connection,	$_POST["author"]);
+        $heading	=	mysqli_real_escape_string($connection,	$_POST["heading"]);
+        $text	=	mysqli_real_escape_string($connection,	$_POST["text"]);
         $query = "INSERT INTO joskl841 VALUES (NULL, '$author', '$heading', '$text')";
         if (!mysqli_query($connection, $query)) {
             die('Error: Cannot post to MYSQL' . mysqli_error());
@@ -34,6 +34,7 @@
         <a href="om.html" >Om projektet</a>
         <a href="projektdagbok.php" class="active">Projektdagbok</a href="om.html">
         <a href="http://weber.itn.liu.se/~nikro27/tnmk30-2018/" target="_blank">Kurshemsida</a>
+        <a href="lego.php">Labb 5</a>
         <div id="time"></div>
     </header>
     <div id="frontimg">
@@ -41,12 +42,13 @@
     <div class="content">
         <div class="container">
             <form action="projektdagbok.php" method="GET">
-                Visa senaste <input type="text" placeholder="1" name="latest"> posterna 
-                <button type="submit" name="apply">Apply</button>
+                <input type="text" placeholder="Antal posts" name="latest">
                 <input type="text" placeholder="Sökord" name="keyword">
+                <button type="submit" name="apply">Apply</button>
             </form>
 
             <button onclick="document.querySelector('.overlay').style.transform = 'translateY(0)'">Nytt mötesprotokoll</button> 
+            <!-- <button onclick="document.querySelector('.overlay').style.transform = 'translateY(0)'">Nytt mötesprotokoll</button>  -->
 
             <?php
             $connection	=	mysqli_connect("mysql.itn.liu.se","blog", "", "blog");
@@ -60,15 +62,12 @@
                 $howmany = $_GET['latest'];
                 $sorting = "SELECT	*	FROM joskl841	ORDER	BY	entry_date	DESC LIMIT $howmany";
             }
-
+ 
             if (isset($_GET['keyword'])) {
                 $keyword = $_GET['keyword'];
                 if(!empty($keyword)) {
-                    $sorting = "SELECT	*	FROM    joskl841   WHERE  entry_author LIKE '%$keyword%'  OR  entry_text  LIKE    '%$keyword%' OR entry_heading LIKE '%$keyword%'" ;
+                    $sorting = "SELECT	*	FROM    joskl841   WHERE  entry_author LIKE '%$keyword%'  OR  entry_text  LIKE    '%$keyword%' OR entry_heading LIKE '%$keyword%' ORDER BY entry_date DESC" ;
                 }
-                // $query_posts= "SELECT * FROM posts WHERE user_id= '$user_id' AND story LIKE '%$filter_tag%' ORDER BY post_id DESC";
-                // $sorting = "SELECT	*	FROM joskl841   WHERE  entry_text   LIKE $_GET['keyword']	BY	entry_date	DESC";
-
             }
 
             $result	=	mysqli_query($connection,	$sorting);

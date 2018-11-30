@@ -57,7 +57,7 @@ button:hover {
 
 form {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 form input {
