@@ -112,6 +112,10 @@ header .active {
     margin: 0;
 }
 
+.container p {
+    margin-top: 0;
+}
+
 footer {
     position: absolute;
     bottom: 0;

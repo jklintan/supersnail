@@ -70,7 +70,7 @@ form textarea {
     padding: 10px;
 }
 
-.overlay div .row {
+.overlay div form .row {
     position: relative;
     display: flex;
     flex-direction: row;

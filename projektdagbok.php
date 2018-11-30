@@ -1,28 +1,17 @@
 ﻿<?php
     if(isset($_POST['submit'])) {
-        $txt = "protocols.txt";
-            if ($_POST["password"]!= "123") { // test if the password is correct
-                print("<p>Felaktigt lösenord!</p>");
-            } else {
-                $timestamp = date("Y/m/d");
-                $headern = $_POST['Heading'];
-                $post = $_POST['Protocol'];
-                $fh = fopen($txt, 'ab');
-
-                // Write the protocol to the file
-                fwrite($fh, '<div class="post">');
-                fwrite($fh, '<h3>');
-                fwrite($fh, $headern);
-                fwrite($fh, '</h3>');
-                fwrite($fh, '<p>');
-                fwrite($fh, $post);
-                fwrite($fh, '</p>');
-                fwrite($fh, '<p>');
-                fwrite($fh, $timestamp);
-                fwrite($fh, '</p>');
-                fwrite($fh, '</div>');
-                fclose($fh);
-            }
+        $connection = mysqli_connect("mysql.itn.liu.se","blog_edit", "bloggotyp", "blog");
+        if(!$connection){
+            die('MySQL connection error');
+        }
+        $author	=	mysqli_real_escape_string($connection,	$_POST["author"]);								
+        $heading	=	mysqli_real_escape_string($connection,	$_POST["heading"]);							
+        $text	=	mysqli_real_escape_string($connection,	$_POST["text"]);					
+        $query = "INSERT INTO joskl841 VALUES (NULL, '$author', '$heading', '$text')";
+        if (!mysqli_query($connection, $query)) {
+            die('Error: Cannot post to MYSQL' . mysqli_error());
+        }
+        mysqli_close($connection);
     }
 ?>
 <!DOCTYPE html>
@@ -51,8 +40,51 @@
     </div>
     <div class="content">
         <div class="container">
-			<button onclick="document.querySelector('.overlay').style.transform = 'translateY(0)'">Nytt mötesprotokoll</button> 
-            <?php include("protocols.txt");?>
+            <form action="projektdagbok.php" method="GET">
+                Visa senaste <input type="text" placeholder="1" name="latest"> posterna 
+                <button type="submit" name="apply">Apply</button>
+                <input type="text" placeholder="Sökord" name="keyword">
+            </form>
+
+            <button onclick="document.querySelector('.overlay').style.transform = 'translateY(0)'">Nytt mötesprotokoll</button> 
+
+            <?php
+            $connection	=	mysqli_connect("mysql.itn.liu.se","blog", "", "blog");
+            if(!$connection){
+                die('MySQL connection error');
+            }
+            $timestamp = date("Y/m/d");
+            $sorting = "SELECT	*	FROM joskl841	ORDER	BY	entry_date	DESC";
+
+            if(isset($_GET['latest']) != '') {
+                $howmany = $_GET['latest'];
+                $sorting = "SELECT	*	FROM joskl841	ORDER	BY	entry_date	DESC LIMIT $howmany";
+            }
+
+            if (isset($_GET['keyword'])) {
+                $keyword = $_GET['keyword'];
+                if(!empty($keyword)) {
+                    $sorting = "SELECT	*	FROM    joskl841   WHERE  entry_author LIKE '%$keyword%'  OR  entry_text  LIKE    '%$keyword%' OR entry_heading LIKE '%$keyword%'" ;
+                }
+                // $query_posts= "SELECT * FROM posts WHERE user_id= '$user_id' AND story LIKE '%$filter_tag%' ORDER BY post_id DESC";
+                // $sorting = "SELECT	*	FROM joskl841   WHERE  entry_text   LIKE $_GET['keyword']	BY	entry_date	DESC";
+
+            }
+
+            $result	=	mysqli_query($connection,	$sorting);
+            while	($row	=	mysqli_fetch_array($result)){
+                $heading	=	$row['entry_heading'];
+                print("<div class='post'>");
+                print("<h2>$heading</h2>\n");
+                $text	=	$row['entry_text'];
+                print("<p>$text</p>\n");
+                $date	=	$row['entry_date'];
+                $author	=	$row['entry_author'];
+                print("<p>$author, $date</p	>\n");
+                print("</div>");
+            }
+            ?>
+
         </div>
 	</div>
 	<div class="overlay" >
@@ -62,16 +94,17 @@
                 <i class="fas fa-times" onclick="closeOverlay()"></i>
             </div>
 			<form action="projektdagbok.php" method="POST">
-            <form>
 				<p>Titel</p>
-				<input value="En riktigt bra titel" name="Heading" type="text" />
+                <input name="heading" type="text" />
+                <p>Användare</p>
+				<input name="author" type="text" />
 				<p>Anteckningar</p>
-				<textarea value="123" name="Protocol" type="text"></textarea>
+				<textarea value="123" name="text" type="text"></textarea>
 				<div class="row">
-					<input value="123" name="password"  type="password" placeholder="password"/>
+					<input name="password"  type="password" placeholder="password"/>
                     <button type="submit" name="submit">Posta</button>
 				</div>
-			<form>
+            </form>
 		</div>
 	</div>
     <footer>

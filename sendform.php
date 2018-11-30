@@ -1,31 +1,25 @@
 ﻿<?php
-    $txt = "protocols.txt";
-    if ($_POST["password"]!= "123") { // test if the password is correct
-        print("<p>Felaktigt lösenord!</p>");
-    } else {
-        $timestamp = date("Y/m/d");
-        $headern = $_POST['Heading'];
-        $post = $_POST['Protocol'];
-        $fh = fopen($txt, 'ab');
+    $connection = mysqli_connect("mysql.itn.liu.se","blog_edit", "bloggotyp", "blog");
+                if(!$connection){
+                    die('MySQL connection error');
+                }
+                $author = 'Jozzz';
+                $heading	=	$_POST['heading'];
+                $text	=	$_POST['text'];
+                $date = date("Y/m/d");
+                $query = "INSERT INTO blog VALUES ('$date', '$author', '$heading', '$text')";
+                if (!mysqli_query($connection, $query))
+                {
+                    die('Error: Cannot post to MYSQL' . mysqli_error());
+                }
+                mysqli_query($connection, $query);
+                mysqli_close($connection);
+            ?>
 
-        // Write the protocol to the file
-        fwrite($fh, '<div class="post">');
-        fwrite($fh, '<h3>');
-        fwrite($fh, $headern);
-        fwrite($fh, '</h3>');
-        fwrite($fh, '<p>');
-        fwrite($fh, $post);
-        fwrite($fh, '</p>');
-        fwrite($fh, '<p>');
-        fwrite($fh, $timestamp);
-        fwrite($fh, '</p>');
-        fwrite($fh, '</div>');
-        fclose($fh);
-        header('Location: projektdagbok.php');
-    }
-?>
 <html>
-</html>
+    <p>Ditt blogginlägg har postats! </p>
+    <p><a href="http://www.student.itn.liu.se/~joskl841/projektdagbok.php">Ta mig tillbaka</a></p>
+    </html>
 
 <!-- <script type="text/javascript">
     window.location.href = 'projektdagbok.php';
